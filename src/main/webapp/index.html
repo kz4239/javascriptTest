@@ -1,0 +1,27 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+</head>
+<script type="text/javascript">
+	function startup() {
+		var newTable = document.createElement('table');
+		newTable.style.backgroundColor='red';
+		var newTr = document.createElement('tr');
+		newTable.appendChild(newTr);
+		var newTd = document.createElement('td');
+		newTr.appendChild(newTd);
+		newTd.innerText='a';
+		var newRow = newTable.insertRow(-1);
+		var newCell = newRow.insertCell(-1);
+		newCell.innerHTML='b';
+
+
+
+		document.getElementById('table').appendChild(newTable);
+	}
+</script>
+<body onload="startup();">
+	<div id="table"></div>
+</body>
+</html>
