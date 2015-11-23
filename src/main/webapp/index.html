@@ -6,17 +6,27 @@
 <script type="text/javascript">
 	function startup() {
 		var newTable = document.createElement('table');
-		newTable.style.backgroundColor='red';
+		newTable.style.backgroundColor = 'red';
 		var newTr = document.createElement('tr');
 		newTable.appendChild(newTr);
 		var newTd = document.createElement('td');
 		newTr.appendChild(newTd);
-		newTd.innerText='a';
+		newTd.innerText = 'a';
+		newTd.onclick = function() {
+			alert(this.parentNode.rowIndex);
+			alert(this.parentNode.cells[1].childNodes[0].value);
+		};
+
+		var newTd2 = document.createElement('td');
+		newTr.appendChild(newTd2);
+		var chk = document.createElement('input');
+		chk.type='checkbox';
+		chk.value='abc';
+		newTd2.appendChild(chk);
+
 		var newRow = newTable.insertRow(-1);
 		var newCell = newRow.insertCell(-1);
-		newCell.innerHTML='b';
-
-
+		newCell.innerHTML = 'b';
 
 		document.getElementById('table').appendChild(newTable);
 	}
